@@ -1,0 +1,78 @@
+#!/usr/bin/env python
+# coding=utf-8
+'''
+@version:
+@Author: steven
+@Date: 2020-05-27 22:20:22
+@LastEditors: steven
+@LastEditTime: 2020-05-28 01:13:12
+@Description:通过内置heapq可实现简单的优先级队列.
+'''
+
+import heapq
+# 利用
+class PriorityQueue:
+    def __init__(self):
+        self._queue = []
+        self._index = 0
+
+    def push(self, item, priority):
+        #列表的元素插入
+        heapq.heappush(self._queue, (-priority, self._index, item))
+        # (-priority, self._index, item)
+        # -priority取负值为了,从高到低的优先级排列,这与正常的堆排列(从小到大)顺序相反.
+        # index为相同优先级的元素,FIFO,
+        self._index += 1
+        # 因为同优先级的元组,在比较操作的时候会是吧需要引入额外的索引.这样不存在相同的index,而避免上述问题.
+
+
+    def pop(self):
+        #列表的元素删除
+        return heapq.heappop(self._queue)[-1]
+
+class Item:
+    def __init__(self, name):
+        self.name = name
+
+    def __repr__(self):
+        return 'Item({!r})'.format(self.name)
+
+def PQ_ABCD():
+    q = PriorityQueue()
+    q.push(Item('AAA'), 1)
+    q.push(Item('BBB'), 4)
+    q.push(Item('CCC'), 5)
+    q.push(Item('DDD'), 1)
+    print(q.pop())
+    print(q.pop())
+    print(q.pop())
+    print(q.pop())
+    '''
+    Item('CCC')
+    Item('BBB')
+    Item('AAA')
+    Item('DDD')
+    '''
+
+def PQ_cook():
+    # https://python3-cookbook.readthedocs.io/zh_CN/latest/c01/p05_implement_a_priority_queue.html
+    q = PriorityQueue()
+    q.push(Item('foo'), 1)
+    q.push(Item('bar'), 5)
+    q.push(Item('spam'), 4)
+    q.push(Item('grok'), 1)
+    print(q.pop())
+    print(q.pop())
+    print(q.pop())
+    print(q.pop())
+    """
+    Item('bar')
+    Item('spam')
+    Item('foo')
+    Item('grok')
+    """
+
+if __name__ == "__main__":
+    PQ_cook()
+
+# TODO:如果你想在多个线程中使用同一个队列，那么你需要增加适当的锁和信号量机制。 可以查看 12.3 小节的例子演示是怎样做的。
