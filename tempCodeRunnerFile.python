@@ -1,0 +1,5 @@
+reinput = input("是否重新输入，y表示是，n表示否:)
+if reinput == 'y' or 'Y':
+    need2pay = float(input("请输入需要找的零钱:"))
+else reinput == 'n' or 'N':
+    exit()
