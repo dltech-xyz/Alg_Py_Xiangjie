@@ -5,8 +5,8 @@
 @Author: steven
 @Date: 2020-05-27 22:20:22
 @LastEditors: steven
-@LastEditTime: 2020-06-07 23:17:27
-@Description:最少的零钱数给顾客。
+@LastEditTime: 2020-06-07 23:55:16
+@Description:贪心，最少的零钱数给顾客。
 '''
 # 检验一个输入数是否为正整数：#https://www.quora.com/How-can-I-make-sure-the-user-inputs-a-positive-integer-in-Python
 def pos_num(n,i):

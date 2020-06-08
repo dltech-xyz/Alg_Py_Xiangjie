@@ -1,3 +1,13 @@
+#!/usr/bin/env python
+# coding=utf-8
+'''
+@version:
+@Author: steven
+@Date: 2020-05-27 22:20:22
+@LastEditors: steven
+@LastEditTime: 2020-06-08 10:27:30
+@Description:八皇后
+'''
 n = 8
 x = []  # 一个解（n元数组）
 X = []  # 一组解
