@@ -5,7 +5,7 @@
 @Author: steven
 @Date: 2020-05-27 22:20:22
 @LastEditors: steven
-@LastEditTime: 2020-06-10 10:25:23
+@LastEditTime: 2020-06-10 10:27:24
 @Description:LILO队列
 '''
 from queue import Queue #LILO队列
@@ -51,7 +51,7 @@ priorityQueue.get() #返回并删除优先级最低的元素
 print('全部被删除后:',priorityQueue.queue)  #查看优先级队列中的所有元素
 
 from collections import deque   #双端队列
-dequeQueue:"deque[str]" = deque(['Eric','John','Smith'])
+dequeQueue:"Deque[str]" = deque(['Eric','John','Smith'])
 print(dequeQueue)
 dequeQueue.append('Tom')    #在右侧插入新元素
 dequeQueue.appendleft('Terry')  #在左侧插入新元素
